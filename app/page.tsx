@@ -11,9 +11,6 @@ import { Footer } from "@/components/footer"
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <Header/>
-
       {/* Hero Section */}
       <section className="relative bg-[#0B0C10] py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
