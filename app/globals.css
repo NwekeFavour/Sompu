@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Walter+Turncoat&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap'); */
 @import 'aos/dist/aos.css';
+html{
+  scroll-behavior: smooth;
+}
 
 body{
   font-family: "Walter Turncoat", cursive;
@@ -17,10 +20,13 @@ body{
 }
 
 .title{
-  font-family: "Walter Turncoat", cursive;
+  font-family: "Walter Turncoat", cursive !important;
   font-weight: 500;
   font-style: normal;
 }
+
+ 
+
 
 @custom-variant dark (&:is(.dark *));
 

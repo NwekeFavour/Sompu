@@ -2,102 +2,59 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Heart, Menu, X } from "lucide-react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full flex justify-center bg-transparent">
-      <nav className="w-[90%] mx-auto m-4 lg:w-[calc(100%-2rem)]">
-        <div className="bg-white rounded-full lg:px-10 md:px-8 sm:px-6 px-4 xl:px-12 py-2 shadow-lg border border-gray-200">
-          <div className="flex lg:gap-5 items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-bold text-black">Sọmpụ</span>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
-              <Link href="" className="text-gray-700 hover:text-black transition-colors text-sm font-medium">
-                Products
-              </Link>
-              <Link href="" className="text-gray-700 hover:text-black transition-colors text-sm font-medium">
-                Templates
-              </Link>
-              <Link href="" className="text-gray-700 hover:text-black transition-colors text-sm font-medium">
-                Marketplace
-              </Link>
-              <Link href="" className="text-gray-700 hover:text-black transition-colors text-sm font-medium">
-                Learn
-              </Link>
-              <Link href="" className="text-gray-700 hover:text-black transition-colors text-sm font-medium">
-                Pricing
-              </Link>
-            </div>
-
-            {/* Desktop Auth Buttons */}
-            <div className="flex items-center gap-4">
-              <div className="hidden md:flex items-center gap-6">
-                <Link
-                  href="/login"
-                  className="text-gray-700 px-7 rounded-[10px] py-3 hover:text-black hover:bg-gray-100"
-                >
-                  Login
-                </Link>
-                <Link
-                  href={"/register"}
-                  className="bg-black py-2 text-white hover:bg-gray-800 rounded-full px-4"
-                >
-                  Sign up free
-                </Link>
-              </div>
-
-              {/* Mobile Menu Toggle */}
-              <button
-                className="lg:hidden flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100"
-                onClick={() => setMobileOpen(!mobileOpen)}
-              >
-                {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 border rounded-xl border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md">
+      <div className="flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
+            <Heart className="w-5 h-5 text-primary-foreground" />
           </div>
+          <Link href={"/"} className="text-xl font-bold text-foreground title">Sompu</Link>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileOpen && (
-          <div className="lg:hidden mt-2 z-40 bg-white rounded-2xl shadow-lg border border-gray-200 p-6 space-y-4">
-            <Link href="" className="block text-gray-700 hover:text-black text-base font-medium">
-              Products
-            </Link>
-            <Link href="" className="block text-gray-700 hover:text-black text-base font-medium">
-              Templates
-            </Link>
-            <Link href="" className="block text-gray-700 hover:text-black text-base font-medium">
-              Marketplace
-            </Link>
-            <Link href="" className="block text-gray-700 hover:text-black text-base font-medium">
-              Learn
-            </Link>
-            <Link href="" className="block text-gray-700 hover:text-black text-base font-medium">
-              Pricing
-            </Link>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center space-x-8">
+          <a
+            href="#features"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Features
+          </a>
+          <a
+            href="#creators"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Creators
+          </a>
+          <a
+            href="#community"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Community
+          </a>
+          <a
+            href="/about"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            About
+          </a>
+        </nav>
 
-            <div className="pt-4 flex flex-col gap-3">
-              <Link
-                href="/login"
-                className="text-gray-700 text-center px-4 py-3 rounded-xl hover:text-black hover:bg-gray-100"
-              >
-                Login
-              </Link>
-              <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-full">
-                Sign up free
-              </Button>
-            </div>
-          </div>
-        )}
-      </nav>
+        {/* Actions */}
+        <div className="flex items-center space-x-4">
+          <Link href="/login" className="hidden md:inline text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Sign In
+          </Link>
+          <Link href={"/register"} className="bg-black hover:bg-black/70 text-white rounded-md py-2  md:py-3 xl:px-5 lg:px-4 md:px-3 sm:px-3 px-3">Get Started</Link>
+        </div>
+      </div>
     </header>
   )
 }
