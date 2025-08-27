@@ -3,8 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Heart, Mail, MessageCircle, Phone, MapPin, Clock, Send } from "lucide-react"
-import Link from "next/link"
+import { Mail, MessageCircle, Phone, MapPin, Clock, Send } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
@@ -24,7 +23,7 @@ export default function ContactPage() {
               className="mb-6 bg-gradient-to-r from-secondary/20 to-primary/20 text-white border-primary/20"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
-              We're Here to Help
+              {"We're Here to Help"}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Get in Touch with
@@ -96,8 +95,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold text-teal-800 mb-6">Send us a Message</h2>
               <p className="text-muted-foreground mb-8">
-                Fill out the form below and we'll get back to you as soon as possible. We're committed to supporting
-                African creators worldwide.
+                {"Fill out the form below and we'll get back to you as soon as possible. We're committed to supporting African creators worldwide."}
               </p>
 
               <Card className="border-border bg-gradient-to-br from-[#edfcf1] to-[#fbfff3] from-20%">
@@ -148,7 +146,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold text-teal-800 mb-6">Get in Touch</h2>
               <p className="text-muted-foreground mb-8">
-                We're based in Lagos, Nigeria, but we support African creators worldwide. Here's how you can reach us.
+                {"We're based in Lagos, Nigeria, but we support African creators worldwide. Here's how you can reach us."}
               </p>
 
               <div className="space-y-6">

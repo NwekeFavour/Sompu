@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Heart, Users, Globe, Target, Award, Lightbulb } from "lucide-react"
-import Link from "next/link"
 import { FAQComponent } from "@/components/faqAccordion"
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer"

@@ -152,7 +152,7 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose sompu?</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                More than just a link-in-bio tool - we're built specifically for the African creative community
+                {"More than just a link-in-bio tool - we're built specifically for the African creative community"}
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">

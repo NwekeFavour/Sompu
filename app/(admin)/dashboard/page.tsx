@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Plus, BarChart3, Users, Eye, ExternalLink } from "lucide-react"
 import AfricanSmile from "../../../public/images/african-w-smiling.webp"
+import Image from "next/image"
 export default function DashboardPage() {
   const links = [
     {
@@ -53,7 +54,7 @@ export default function DashboardPage() {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                    <img
+                    <Image
                       src={AfricanSmile.src}
                       alt="Profile"
                       className="w-14 h-14 rounded-full object-cover"
