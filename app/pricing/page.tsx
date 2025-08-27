@@ -80,8 +80,7 @@ export default function PricingPage() {
             </Card>
 
             {/* Pro Plan */}
-            {/* <Card className="border-teal-800 hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-primary/5 to-secondary/5 p-6 relative">*/}
-            <Card className="border-teal-800 hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-emerald-200/25 to-emerald-100/25 relative scale-105">
+            <Card className="border-teal-800 md:my-0 my-4 hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-emerald-200/25 to-emerald-100/25 relative scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <Badge className="bg-gradient-to-r  from-emerald-900 to-emerald-800 to-75% text-white px-4 py-1">Most Popular</Badge>
               </div>

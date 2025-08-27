@@ -34,7 +34,7 @@ export default function HomePage() {
               celebrate the rich diversity of African culture and creativity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-lg px-8 bg-teal-950">
                 Start Creating
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -194,11 +194,11 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="bg-gradient-to-br from-green-600/10 to-amber-600/10 rounded-3xl p-8 shadow-2xl">
+                <div className="bg-gradient-to-br from-emerald-700/30 to-amber-600/10 rounded-3xl p-8 shadow-2xl">
                   <div className="bg-white rounded-2xl p-6 shadow-lg">
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-orange-400 rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-950 to-50% to-teal-700 rounded-full flex items-center justify-center">
                           <Heart className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -210,20 +210,20 @@ export default function HomePage() {
                     </div>
                     <div className="space-y-3">
                       <div className="bg-gradient-to-r from-[green]/10 from-89% to-[primary]/5 rounded-lg p-4 flex items-center justify-between">
-                        <span className="font-medium text-foreground">📸 Photography Portfolio</span>
+                        <span className="font-medium  md:text-[17px] text-[15px] text-foreground">📸 Photography Portfolio</span>
                         <ArrowRight className="w-4 h-4 text-primary" />
                       </div>
                       <div className="bg-gradient-to-r from-orange-200/50 from-90% to-[secondary]/5 rounded-lg p-4 flex items-center justify-between">
-                        <span className="font-medium text-foreground">🛒 Print Shop</span>
-                        <ArrowRight className="w-4 h-4 text-black" />
+                        <span className="font-medium text-foreground md:text-[17px] text-[15px]">🛒 Print Shop</span>
+                        <ArrowRight className="w-4 h-4 text-black " />
                       </div>
                       <div className="bg-gradient-to-r from-[green]/5 from-89% to-[primary]/5 rounded-lg p-4 flex items-center justify-between">
-                        <span className="font-medium text-foreground">📱 Instagram</span>
+                        <span className="font-medium text-foreground md:text-[17px] text-[15px]">📱 Instagram</span>
                         <ArrowRight className="w-4 h-4 text-primary" />
                       </div>
                       <div className="bg-gradient-to-r from-orange-200/50 from-90% to-[secondary]/5 rounded-lg p-4 flex items-center justify-between">
-                        <span className="font-medium text-foreground">💌 Book a Session</span>
-                        <ArrowRight className="w-4 h-4 text-secondary" />
+                        <span className="font-medium text-foreground md:text-[17px] text-[15px]">💌 Book a Session</span>
+                        <ArrowRight className="w-4 h-4 text-black" />
                       </div>
                     </div>
                   </div>
@@ -296,7 +296,7 @@ export default function HomePage() {
                     <span className="text-muted-foreground">Analytics dashboard</span>
                   </div>
                 </div>
-                <Button className="bg-gradient-to-l from-teal-500 to-green-500 hover:from-teal-100 hover:to-green-400 font-bold">
+                <Button className="bg-gradient-to-l from-teal-950 to-teal-800 hover:from-teal-700 hover:to-teal-800 font-bold">
                   Start Pro Trial
                 </Button>
               </Card>
@@ -336,7 +336,7 @@ export default function HomePage() {
         </section>
       </div>
 
-      <section className="xl:py-40 lg:py-36 md:py-32 sm:py-30 py-26 bg-muted/30">
+      <section className="xl:py-40 md:px-0 px-8 lg:py-36 md:py-32 sm:py-30 py-26 bg-muted/30">
         <FAQComponent
           faqs={[
             {
