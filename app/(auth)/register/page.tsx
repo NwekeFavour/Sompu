@@ -9,7 +9,7 @@ export default function Register() {
       <div className="flex flex-col justify-center items-center px-6 py-10 bg-white">
         {/* Logo */}
         <div className="flex items-center gap-2 mb-8">
-          <span className="text-2xl font-bold text-[#6C5CE7] title">Sọmpụ</span>
+          <span className="text-2xl font-bold text-emerald-800 title">Sọmpụ</span>
         </div>
 
         {/* Title & Subtitle */}
@@ -28,14 +28,14 @@ export default function Register() {
         {/* Footer */}
         <p className="text-sm text-gray-500 mt-6">
           Already have an account?{" "}
-          <a href="/login" className="text-[#6C5CE7] font-semibold hover:underline">
+          <a href="/login" className="text-emerald-800 font-semibold hover:underline">
             Log in
           </a>
         </p>
       </div>
 
       {/* Right Side - Brand Visual */}
-      <div className="relative hidden lg:flex items-center justify-center bg-gradient-to-br from-[#cdc9f1] to-[#5970f5]">
+      <div className="relative hidden lg:flex items-center justify-center bg-gradient-to-br from-emerald-800 to-teal-400">
         {/* Decorative Shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <svg

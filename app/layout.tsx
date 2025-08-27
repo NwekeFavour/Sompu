@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AOSWrapper from "@/components/AosWrapper";
-import { Header } from "@/components/header";
 
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ export default function RootLayout({
       <body
       >
         <AOSWrapper>
-          <Header />
           {children}
         </AOSWrapper>
       </body>

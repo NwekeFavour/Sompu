@@ -3,25 +3,28 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Badge } from "@/components/ui/badge"
 import { Heart, Users, Globe, Target, Award, Lightbulb } from "lucide-react"
 import Link from "next/link"
-import { Header } from "@/components/header"
 import { FAQComponent } from "@/components/faqAccordion"
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
+        <Header/>
       {/* Hero Section */}
-      <section className="py-20 lg:py-32">
+      <section className="relative bg-teal-900/65 py-38 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tl from-teal-950/5 via-background from-90% to-teal-200/5"></div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6">
-              <Heart className="w-4 h-4 mr-2" />
+              <Heart className="w-4 h-4 mr-2 text-black" />
               Our Story
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
               Empowering African
-              <span className="text-primary block">Creativity Worldwide</span>
+              <span className="text-black/90 block">Creativity Worldwide</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-white opacity-75 mb-8 max-w-3xl mx-auto leading-relaxed">
               sompu was born from a simple belief: African creators deserve a platform that truly understands and
               celebrates their unique stories, culture, and creative vision.
             </p>
@@ -86,18 +89,18 @@ export default function AboutPage() {
                 the challenges of building an online presence while staying true to their cultural identity.
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                We noticed that existing link-in-bio platforms didn't adequately serve the unique needs of African
+                {`We noticed that existing link-in-bio platforms didn't adequately serve the unique needs of African
                 creators. From limited payment options to lack of cultural customization, these platforms felt
-                disconnected from the vibrant, diverse creative landscape across Africa.
+                disconnected from the vibrant, diverse creative landscape across Africa.`}
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                That's when we decided to build something different. sompu isn't just another link platform – it's a
+                {`That's when we decided to build something different. sompu isn't just another link platform – it's a
                 celebration of African creativity, designed by Africans for Africans, with features that truly
-                understand and support the continent's creative ecosystem.
+                understand and support the continent's creative ecosystem.`}
               </p>
               <p className="text-lg leading-relaxed">
-                Today, we're proud to serve thousands of creators across all 54 African countries, helping them share
-                their stories, grow their audiences, and build thriving creative businesses.
+                {`Today, we're proud to serve thousands of creators across all 54 African countries, helping them share
+                their stories, grow their audiences, and build thriving creative businesses.`}
               </p>
             </div>
           </div>
@@ -128,7 +131,7 @@ export default function AboutPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Makes Us Different</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're more than a platform – we're a movement celebrating African creativity
+              {`We're more than a platform, we're a movement celebrating African creativity`}
             </p>
           </div>
 
@@ -144,8 +147,8 @@ export default function AboutPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-secondary" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-gray-500" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">Community First</h3>
               <p className="text-muted-foreground">
@@ -154,8 +157,8 @@ export default function AboutPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-accent" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-orange-500" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">Made with Love</h3>
               <p className="text-muted-foreground">
@@ -172,10 +175,10 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Join Our Mission</h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Be part of the movement that's transforming how African creativity is shared with the world
+              {`Be part of the movement that's transforming how African creativity is shared with the world`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-teal-800 to-teal-950 hover:from-teal-950/90 hover:to-teal-800/90">
                 Start Creating Today
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
@@ -187,84 +190,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-muted/30 py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <span className="text-xl font-bold text-foreground">sompu</span>
-              </div>
-              <p className="text-muted-foreground">Connecting African creators with the world, one link at a time.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <Link href="/" className="hover:text-foreground transition-colors">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Templates
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <Link href="/about" className="hover:text-foreground transition-colors">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/faq" className="hover:text-foreground transition-colors">
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Support</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Help Center
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    Terms
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 sompu. Made with ❤️ for African creators.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 }

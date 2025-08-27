@@ -10,11 +10,11 @@ export default function RegisterForm() {
     password: "",
   });
 
-interface FormData {
-    name: string;
-    email: string;
-    password: string;
-}
+// interface FormData {
+//     name: string;
+//     email: string;
+//     password: string;
+// }
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -69,7 +69,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
       <button
         type="submit"
-        className="w-full bg-[#6C5CE7] hover:bg-[#5a4dd1] text-white font-semibold py-2 px-4 rounded-lg shadow-md transition"
+        className="w-full bg-emerald-900 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition"
       >
         Create Account
       </button>
