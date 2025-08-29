@@ -1,3 +1,5 @@
+"use client"
+
 import { Heart } from "lucide-react";
 
 export function Footer() {
@@ -11,7 +13,7 @@ export function Footer() {
                         <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                         <Heart className="w-5 h-5 text-primary-foreground" />
                         </div>
-                        <span className="text-xl font-bold text-foreground">sompu</span>
+                        <span className="text-xl font-bold text-foreground">Sompü</span>
                     </div>
                     <p className="text-muted-foreground">Connecting African creators with the world, one link at a time.</p>
                     </div>
@@ -82,7 +84,7 @@ export function Footer() {
                     </div>
                 </div>
                 <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-                    <p>&copy; 2024 sompu. Made with ❤️ for African creators.</p>
+                    <p>&copy; 2024 Sompü. Made with ❤️ for African creators.</p>
                 </div>
                 </div>
             </footer>

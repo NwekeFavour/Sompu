@@ -1,4 +1,3 @@
-// app/register/page.jsx
 import RegisterForm from "@/components/registerForm";
 // import { GalleryVerticalEnd } from "lucide-react";
 

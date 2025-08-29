@@ -57,7 +57,7 @@ export default function ProfileSetupPage() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-sm">
               <Heart className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-foreground">sompu</span>
+            <span className="text-xl font-bold text-foreground">Sompü</span>
           </Link>
           <div className="text-sm text-muted-foreground">
             Step {currentStep} of {steps.length}
@@ -106,10 +106,10 @@ export default function ProfileSetupPage() {
               {currentStep === 1 && (
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="username">Choose your sompu username</Label>
+                    <Label htmlFor="username">Choose your Sompü username</Label>
                     <div className="flex">
                       <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-input bg-muted text-muted-foreground text-sm">
-                        sompu.co/
+                        Sompü.co/
                       </span>
                       <Input
                         id="username"
@@ -119,7 +119,7 @@ export default function ProfileSetupPage() {
                         className="rounded-l-none"
                       />
                     </div>
-                    <p className="text-xs text-muted-foreground">This will be your unique sompu URL</p>
+                    <p className="text-xs text-muted-foreground">This will be your unique Sompü URL</p>
                   </div>
 
                   <div className="space-y-2">
@@ -213,7 +213,7 @@ export default function ProfileSetupPage() {
                     <Check className="w-10 h-10 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Welcome to sompu!</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Welcome to Sompü!</h3>
                     <p className="text-muted-foreground">
                       Your profile is ready. Start adding links to share everything you create with the world.
                     </p>

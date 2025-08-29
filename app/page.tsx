@@ -145,12 +145,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose sompu Section */}
+      {/* Why Choose Sompü Section */}
       <div className="py-20 bg-gradient-to-br !from-green-100/20  from-75% !to-background">
         <section>
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose sompu?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Sompü?</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 {"More than just a link-in-bio tool - we're built specifically for the African creative community"}
               </p>
@@ -176,7 +176,7 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-xl font-bold text-foreground mb-2">Lightning Fast Setup</h3>
                     <p className="text-muted-foreground">
-                      Get your sompu up and running in under 5 minutes. No technical skills required - just your
+                      Get your Sompü up and running in under 5 minutes. No technical skills required - just your
                       creativity.
                     </p>
                   </div>
@@ -260,7 +260,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">sompu branding</span>
+                    <span className="text-muted-foreground">Sompü branding</span>
                   </div>
                 </div>
                 <Button className="w-full hover:bg-teal-950 hover:text-white bg-transparent" variant="outline">
@@ -340,16 +340,16 @@ export default function HomePage() {
         <FAQComponent
           faqs={[
             {
-              question: "What is Sompu?",
-              answer: "Sompu is an all-in-one bio page that helps creators and businesses connect their TikTok, Instagram, YouTube, music, events, and more in one beautiful, customizable link."
+              question: "What is Sompü?",
+              answer: "Sompü is an all-in-one bio page that helps creators and businesses connect their TikTok, Instagram, YouTube, music, events, and more in one beautiful, customizable link."
             },
             {
-              question: "Who can use Sompu?",
-              answer: "Anyone! Whether you’re an artist, influencer, small business owner, or content creator, Sompu makes it easy to share all your links and grow your audience."
+              question: "Who can use Sompü?",
+              answer: "Anyone! Whether you’re an artist, influencer, small business owner, or content creator, Sompü makes it easy to share all your links and grow your audience."
             },
             {
-              question: "Is Sompu free to use?",
-              answer: "Yes! Sompu offers a free version with essential features. We also provide premium options for users who want advanced customization and analytics."
+              question: "Is Sompü free to use?",
+              answer: "Yes! Sompü offers a free version with essential features. We also provide premium options for users who want advanced customization and analytics."
             }
           ]}
         />
@@ -362,14 +362,14 @@ export default function HomePage() {
               Ready to Share Your Story with the World?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Join thousands of African creators who are already using sompu to showcase their work, connect with
+              Join thousands of African creators who are already using Sompü to showcase their work, connect with
               their audience, and grow their creative businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link href="/profile-setup">
                 <Button className="w-full bg-teal-950 text-white hover:bg-transparent" variant="outline" size={"lg"}>
 
-                  Create Your sompu Now
+                  Create Your Sompü Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>

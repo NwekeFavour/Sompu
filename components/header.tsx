@@ -12,7 +12,7 @@ export function Header() {
           <div className="w-9 h-9 bg-emerald-900 rounded-lg flex items-center justify-center">
             <Heart className="w-5 h-5 text-primary-foreground" />
           </div>
-          <Link href={"/"} className="text-xl font-bold text-foreground title">Sompu</Link>
+          <Link href={"/"} className="text-xl font-bold text-foreground title">Sompü</Link>
         </div>
 
         {/* Desktop Nav */}

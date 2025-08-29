@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -24,7 +25,7 @@ export default function AboutPage() {
               <span className="text-black/90 block">Creativity Worldwide</span>
             </h1>
             <p className="text-xl text-white opacity-75 mb-8 max-w-3xl mx-auto leading-relaxed">
-              sompu was born from a simple belief: African creators deserve a platform that truly understands and
+              Sompü was born from a simple belief: African creators deserve a platform that truly understands and
               celebrates their unique stories, culture, and creative vision.
             </p>
           </div>
@@ -84,7 +85,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">Our Story</h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p className="text-xl leading-relaxed mb-6">
-                sompu was founded in 2024 by a team of African entrepreneurs and creators who experienced firsthand
+                Sompü was founded in 2024 by a team of African entrepreneurs and creators who experienced firsthand
                 the challenges of building an online presence while staying true to their cultural identity.
               </p>
               <p className="text-lg leading-relaxed mb-6">
@@ -93,7 +94,7 @@ export default function AboutPage() {
                 disconnected from the vibrant, diverse creative landscape across Africa.`}
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                {`That's when we decided to build something different. sompu isn't just another link platform – it's a
+                {`That's when we decided to build something different. Sompü isn't just another link platform – it's a
                 celebration of African creativity, designed by Africans for Africans, with features that truly
                 understand and support the continent's creative ecosystem.`}
               </p>
@@ -109,16 +110,16 @@ export default function AboutPage() {
         <FAQComponent
             faqs={[
             {
-                question: "What is Sompu?",
-                answer: "Sompu is an all-in-one bio page that helps creators and businesses connect their TikTok, Instagram, YouTube, music, events, and more in one beautiful, customizable link."
+                question: "What is Sompü?",
+                answer: "Sompü is an all-in-one bio page that helps creators and businesses connect their TikTok, Instagram, YouTube, music, events, and more in one beautiful, customizable link."
             },
             {
-                question: "Who can use Sompu?",
-                answer: "Anyone! Whether you’re an artist, influencer, small business owner, or content creator, Sompu makes it easy to share all your links and grow your audience."
+                question: "Who can use Sompü?",
+                answer: "Anyone! Whether you’re an artist, influencer, small business owner, or content creator, Sompü makes it easy to share all your links and grow your audience."
             },
             {
-                question: "Is Sompu free to use?",
-                answer: "Yes! Sompu offers a free version with essential features. We also provide premium options for users who want advanced customization and analytics."
+                question: "Is Sompü free to use?",
+                answer: "Yes! Sompü offers a free version with essential features. We also provide premium options for users who want advanced customization and analytics."
           }
         ]}
       />

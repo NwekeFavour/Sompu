@@ -57,7 +57,7 @@ export default function PricingPage() {
               <CardContent className="space-y-4">
                 <ul className="space-y-3">
                   {[
-                    "1 AfriLink page",
+                    "1 Sompü page",
                     "Unlimited links",
                     "Basic analytics",
                     "African-inspired themes",
@@ -103,7 +103,7 @@ export default function PricingPage() {
                     "Advanced analytics",
                     "Priority themes",
                     "Email capture",
-                    "Remove AfriLink branding",
+                    "Remove Sompü branding",
                     "Priority support",
                     "Social media scheduling",
                   ].map((feature, index) => (
@@ -168,7 +168,7 @@ export default function PricingPage() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Everything you need to know about AfriLink pricing</p>
+              <p className="text-xl text-muted-foreground">Everything you need to know about Sompü pricing</p>
             </div>
 
             <div className="space-y-6">
@@ -219,7 +219,7 @@ export default function PricingPage() {
               Ready to Start Your Creator Journey?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Join thousands of African creators who are already using AfriLink to share their stories with the world.
+              Join thousands of African creators who are already using Sompü to share their stories with the world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

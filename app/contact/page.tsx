@@ -28,11 +28,11 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Get in Touch with
               <span className="text-black opacity-50 block">
-                sompu Support
+                Sompü Support
               </span>
             </h1>
             <p className="text-white opacity-75 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Have questions about sompu? Need help with your creator profile? Our team is here to support African
+              Have questions about Sompü? Need help with your creator profile? Our team is here to support African
               creators every step of the way.
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 <CardDescription>Get detailed help via email. We typically respond within 24 hours.</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-teal-950 font-medium">support@sompu.com</p>
+                <p className="text-teal-950 font-medium">support@Sompü.com</p>
               </CardContent>
             </Card>
 
@@ -80,7 +80,7 @@ export default function ContactPage() {
                 <CardDescription>Speak directly with our team for urgent matters and technical issues.</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-teal-950 font-medium">+234 (0) 800 sompu</p>
+                <p className="text-teal-950 font-medium">+234 (0) 800 Sompü</p>
               </CardContent>
             </Card>
           </div>

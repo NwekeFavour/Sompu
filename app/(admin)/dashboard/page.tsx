@@ -64,7 +64,7 @@ export default function DashboardPage() {
                     <h1 className="text-2xl font-bold text-foreground">@amara_creates</h1>
                     <p className="text-muted-foreground">Digital Artist from Lagos 🇳🇬</p>
                     <Badge className="mt-1 bg-green-300/20 text-green-600 !border-primary/20">
-                      sompu.co/amara_creates
+                      Sompü.co/amara_creates
                     </Badge>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function DashboardPage() {
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">No links yet</h3>
                 <p className="text-muted-foreground text-center mb-4 max-w-sm">
-                  Start building your sompu by adding your first link. Share your social media, portfolio, or any
+                  Start building your Sompü by adding your first link. Share your social media, portfolio, or any
                   content you create.
                 </p>
                 <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
