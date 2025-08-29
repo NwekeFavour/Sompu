@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hook";  
 import { registerUser } from "../features/auth/authslice";
 import { useNotifications } from "reapop";
-
+import { User } from "../type"
 export default function RegisterForm() {
   const dispatch = useAppDispatch();
   const { notify } = useNotifications();
@@ -17,7 +17,7 @@ export default function RegisterForm() {
 
   // grab state from authslice
   const { loading, error, user, success } = useAppSelector(
-    (state: { auth: { loading: boolean; error: string | null; user: any; success: boolean } }) => state.auth
+    (state: { auth: { loading: boolean; error: string | null; user: User; success: boolean } }) => state.auth
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

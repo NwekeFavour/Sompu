@@ -10,14 +10,14 @@ import { useAppDispatch, useAppSelector } from "../store/hook"
 import { requestOTP, loginWithPassword } from "../features/auth/authslice"
 import { useNotifications } from "reapop"
 import { useRouter } from "next/navigation"
-
+import { User } from "../type"
 function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
   const dispatch = useAppDispatch()
   const router = useRouter()
   const { notify } = useNotifications()
 
   const { loading, error, user, token } = useAppSelector(
-    (state: { auth: { loading: boolean; error: string | null; user: any; token: string | null } }) => state.auth
+    (state: { auth: { loading: boolean; error: string | null; user: User; token: string | null } }) => state.auth
   )
 
   const [method, setMethod] = useState<"otp" | "password">("otp")
