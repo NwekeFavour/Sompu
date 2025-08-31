@@ -1,52 +1,70 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from "react"
-import { Input } from "./ui/input"
-import { cn } from "@/lib/utils"
-import { Label } from "./ui/label"
-import { Button } from "./ui/button"
-import { Loader2 } from "lucide-react"
-import { useAppDispatch, useAppSelector } from "../store/hook"  
-import { requestOTP, loginWithPassword } from "../features/auth/authslice"
-import { useNotifications } from "reapop"
-import { useRouter } from "next/navigation"
-import { User } from "../type"
+import React, { useEffect, useState } from "react";
+import { Input } from "./ui/input";
+import { cn } from "@/lib/utils";
+import { Label } from "./ui/label";
+import { Button } from "./ui/button";
+import { Loader2 } from "lucide-react";
+import { useAppDispatch, useAppSelector } from "../store/hook";
+import { requestOTP, verifyOTP, loginWithPassword } from "../features/auth/authslice";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { User } from "../type";
+
 function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
-  const dispatch = useAppDispatch()
-  const router = useRouter()
-  const { notify } = useNotifications()
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const { loading, error, user, token } = useAppSelector(
     (state: { auth: { loading: boolean; error: string | null; user: User; token: string | null } }) => state.auth
-  )
+  );
 
-  const [method, setMethod] = useState<"otp" | "password">("otp")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [method, setMethod] = useState<"otp" | "password">("otp");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpSent, setOtpSent] = useState(false); // flag to track OTP request
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
+
     if (method === "otp") {
-      dispatch(requestOTP({ email }))
+      if (!otpSent) {
+        // first step: request OTP
+        dispatch(requestOTP({ email }))
+          .unwrap()
+          .then(() => {
+            toast.success("OTP sent to your email!");
+            setOtpSent(true);
+          })
+          .catch((err) => toast.error(err));
+      } else {
+        // second step: verify OTP
+        dispatch(verifyOTP({ email, otp }));
+      }
     } else {
-      dispatch(loginWithPassword({ email, password }))
+      // password login
+      dispatch(loginWithPassword({ email, password }));
     }
-  }
+  };
 
   // 🔹 Show error toast
   useEffect(() => {
     if (error) {
-      notify({ message: error, status: "error" });
+      console.log("eee:", error);
+      toast.error(error);
     }
-  }, [error, notify])
+  }, [error]);
 
   // 🔹 Show success toast + redirect
   useEffect(() => {
     if (user && token) {
-      notify({ message: "User Logged In Successfully 🎉", status: "success" });
-      router.push("/dashboard") // redirect after login
+      // console.log("user, token:", user, token);
+      toast.success("User Logged In Successfully 🎉");
+      router.push("/dashboard");
     }
-  }, [user, token, notify, router])
+  }, [user, token, router]);
 
   return (
     <div>
@@ -61,7 +79,9 @@ function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
           </h1>
           <p className="text-muted-foreground text-sm text-balance">
             {method === "otp"
-              ? "Enter your email below and we’ll send you a one-time passcode."
+              ? otpSent
+                ? "Enter the OTP sent to your email."
+                : "Enter your email below and we’ll send you a one-time passcode."
               : "Enter your email and password to access your account."}
           </p>
         </div>
@@ -77,6 +97,7 @@ function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              disabled={otpSent} // lock email once OTP is sent
             />
           </div>
 
@@ -102,6 +123,21 @@ function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
             </div>
           )}
 
+          {/* OTP Field (only if method=otp and OTP has been sent) */}
+          {method === "otp" && otpSent && (
+            <div className="grid gap-3">
+              <Label htmlFor="otp">One-Time Passcode</Label>
+              <Input
+                id="otp"
+                type="text"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                placeholder="Enter your OTP"
+                required
+              />
+            </div>
+          )}
+
           {/* Main CTA */}
           <Button
             type="submit"
@@ -109,15 +145,16 @@ function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
             disabled={loading}
           >
             {loading ? <Loader2 className="animate-spin w-4 h-4 mr-2" /> : null}
-            {method === "otp" ? "Send OTP" : "Login"}
+            {method === "otp" ? (otpSent ? "Verify OTP" : "Send OTP") : "Login"}
           </Button>
 
           {/* Inline error (optional, since toast already shows) */}
-{error && (
-  <p className="text-red-500 text-sm text-center">
-    {typeof error === "string" ? error : JSON.stringify(error)}
-  </p>
-)}
+          {error && (
+            <p className="text-red-500 text-sm text-center">
+              {typeof error === "string" ? error : JSON.stringify(error)}
+            </p>
+          )}
+
           {/* Switch login method */}
           <p className="text-center text-sm text-muted-foreground">
             {method === "otp" ? (
@@ -126,7 +163,10 @@ function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
                 <button
                   type="button"
                   className="underline underline-offset-4"
-                  onClick={() => setMethod("password")}
+                  onClick={() => {
+                    setMethod("password");
+                    setOtpSent(false);
+                  }}
                 >
                   Login with password
                 </button>
@@ -137,7 +177,10 @@ function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
                 <button
                   type="button"
                   className="underline underline-offset-4"
-                  onClick={() => setMethod("otp")}
+                  onClick={() => {
+                    setMethod("otp");
+                    setOtpSent(false);
+                  }}
                 >
                   Use OTP instead
                 </button>
@@ -147,7 +190,7 @@ function LoginForm(props: React.HTMLAttributes<HTMLFormElement>) {
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default LoginForm
+export default LoginForm;

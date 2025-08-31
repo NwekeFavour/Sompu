@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Heart, Upload, ArrowRight, ArrowLeft, Check } from "lucide-react"
 import Link from "next/link"
+import ProtectedRoute from "@/components/protectedRoute"
 
 export default function ProfileSetupPage() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -49,6 +50,7 @@ export default function ProfileSetupPage() {
   }
 
   return (
+    <ProtectedRoute>
     <div className="min-h-screen  bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       {/* Header */}
       <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -251,14 +253,14 @@ export default function ProfileSetupPage() {
                 {currentStep < 4 ? (
                   <Button
                     onClick={handleNext}
-                    className="bg-gradient-to-tl from-orange-300 to-green-500 hover:from-orange-300 hover:to-green-400 font-bold"
+                    className="bg-gradient-to-tl from-teal-900 to-80% to-teal-500 hover:from-teal-500 hover:to-teal-400 font-bold"
                   >
                     Next
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 ) : (
                   <Link href="/dashboard">
-                    <Button className="bg-gradient-to-l from-orange-500 to-green-500 hover:from-orange-300 hover:to-green-400 font-bold">
+                    <Button className="bg-gradient-to-l  from-teal-900 to-80% to-teal-500 hover:from-teal-500 hover:to-teal-400 font-bold">
                       Go to Dashboard
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -270,5 +272,6 @@ export default function ProfileSetupPage() {
         </div>
       </div>
     </div>
+    </ProtectedRoute>
   )
 }

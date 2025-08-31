@@ -3,14 +3,16 @@
 import { Provider } from "react-redux";
 import { store } from "../../store";
 import AOSWrapper from "@/components/AosWrapper";
-import ReapopProvider from "./reapopProvider";
+import ToastProvider from "@/components/toastProvider";
+import TokenSync from "@/tokensync";
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
+      <TokenSync/>
       <AOSWrapper>
-        <ReapopProvider>
-            {children}
-        </ReapopProvider>
+            <ToastProvider>
+              {children}
+            </ToastProvider>
       </AOSWrapper>
     </Provider>
   );

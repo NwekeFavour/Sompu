@@ -1,8 +1,21 @@
+"use client"
 // app/dashboard/layout.tsx
-import { ReactNode } from "react"
+import { ReactNode, useEffect } from "react"
 import { DashboardHeader } from "@/components/dashboard-header"
+import { useAppSelector } from "@/store/hook";
+import { useRouter } from "next/navigation";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
+    const token = useAppSelector((state) => state.auth.token);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!token) {
+      router.replace("/login"); // redirect if no token
+    }
+  }, [token, router]);
+
+  if (!token) return null; // prevent flicker while checking
   return (
     <div className="min-h-screen flex flex-col">
       {/* Sticky Top Header */}

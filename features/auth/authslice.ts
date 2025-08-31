@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
 const NEXT_PUBLIC_API_URL= process.env.NEXT_PUBLIC_API_URL
 
 interface AuthState {
@@ -9,28 +10,35 @@ interface AuthState {
   loading: boolean;
   error: string | null;
   otpRequested: boolean;
-  success: boolean
+  success: boolean,
 }
 
 const initialState: AuthState = {
   user: null,
-  token: null,
   loading: false,
   error: null,
   otpRequested: false,
-  success: false
+  success: false,
+  token
 };
+
+
 
 // 🔹 Request OTP
 export const requestOTP = createAsyncThunk(
   "auth/requestOTP",
-  async ({ email }: { email: string }, thunkAPI) => {
-    const response = await fetch(`${NEXT_PUBLIC_API_URL}/api/auth/login/request-otp`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
-    return response.json();
+  async ({ email }: { email: string }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(`${NEXT_PUBLIC_API_URL}/api/auth/login/request-otp`, {
+        email,
+      });
+      return response.data; // axios puts JSON in `data`
+    } catch (err: any) {
+      // Catch network / server errors
+      return rejectWithValue(
+        err.response?.data?.error || "Failed to request OTP. Please try again."
+      );
+    }
   }
 );
 
@@ -74,9 +82,10 @@ export const registerUser = createAsyncThunk(
       const res = await axios.post(`${NEXT_PUBLIC_API_URL}/api/auth/register`, { fullname, email, password });
       return res.data;
     } catch (err) {
+      
       if (axios.isAxiosError(err)) {
       return rejectWithValue(err.response?.data || "Server Error");
-      }
+      } 
       return rejectWithValue("Server Error");
     }
   }
@@ -86,6 +95,9 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    setToken: (state, action) => {
+      state.token = action.payload;
+    },
     logout: (state) => {
       state.user = null;
       state.token = null;
@@ -125,6 +137,9 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.success = true;
+        if (typeof window !== "undefined") {
+          localStorage.setItem("token", action.payload.token);
+        }
       })
       .addCase(verifyOTP.rejected, (state, action) => {
         state.loading = false;
@@ -143,6 +158,9 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.success = true;
+        if (typeof window !== "undefined") {
+          localStorage.setItem("token", action.payload.token);
+        }
       })
       .addCase(loginWithPassword.rejected, (state, action) => {
         state.loading = false;
@@ -161,6 +179,9 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.success = true;
+        if (typeof window !== "undefined") {
+          localStorage.setItem("token", action.payload.token);
+        }
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
@@ -170,5 +191,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, setToken } = authSlice.actions;
 export default authSlice.reducer;

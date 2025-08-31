@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hook";  
 import { registerUser } from "../features/auth/authslice";
-import { useNotifications } from "reapop";
+import {toast} from 'react-toastify';
+
 import { User } from "../type"
+import { useRouter } from "next/navigation";
+
 export default function RegisterForm() {
   const dispatch = useAppDispatch();
-  const { notify } = useNotifications();
+  const router = useRouter()
 
   const [formData, setFormData] = useState({
     fullname: "",
@@ -27,23 +30,28 @@ export default function RegisterForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Register data:", formData);
-    console.log(user)
+    console.log(success, user)
     dispatch(registerUser(formData));
   };
 
   // show error notification
   useEffect(() => {
     if (error) {
-      notify({ message: error, status: "error" });
+      console.log("error:",  error)
+      toast.error(error)
     }
-  }, [error, notify]);
+  }, [error]);
 
   // show success notification
   useEffect(() => {
     if (success) {
-      notify({ message: "Account created successfully 🎉", status: "success" });
+      console.log(success, user)
+      setTimeout(() => {
+        router.push("/profile-setup")
+      }, 4000);
+      toast.success("Account created successfully 🎉")
     }
-  }, [success, notify]);
+  }, [success, router, user]);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
