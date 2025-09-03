@@ -1,12 +1,14 @@
+"use client"
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+// Remove SSR-unsafe localStorage access. Token will be synced on client after mount.
 const NEXT_PUBLIC_API_URL= process.env.NEXT_PUBLIC_API_URL
 
 interface AuthState {
   user: any | null;
-  token: string | null;
+  token: null;
   loading: boolean;
   error: string | null;
   otpRequested: boolean;
@@ -19,7 +21,7 @@ const initialState: AuthState = {
   error: null,
   otpRequested: false,
   success: false,
-  token
+  token: null
 };
 
 
@@ -101,6 +103,9 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.token = null;
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("toke n");
+      }
     },
     resetSuccess: (state) => {
       state.success = false;
@@ -191,5 +196,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout, setToken } = authSlice.actions;
+export const { logout, setToken, resetSuccess } = authSlice.actions;
 export default authSlice.reducer;

@@ -21,7 +21,7 @@ export function Footer() {
                     <h3 className="font-semibold text-foreground mb-4">Product</h3>
                     <ul className="space-y-2 text-muted-foreground">
                         <li>
-                        <a href="#" className="hover:text-foreground transition-colors">
+                        <a href="/features" className="hover:text-foreground transition-colors">
                             Features
                         </a>
                         </li>
@@ -33,6 +33,11 @@ export function Footer() {
                         <li>
                         <a href="#" className="hover:text-foreground transition-colors">
                             Templates
+                        </a>
+                        </li>
+                        <li>
+                        <a href="/about" className="hover:text-foreground transition-colors">
+                            About Us
                         </a>
                         </li>
                     </ul>

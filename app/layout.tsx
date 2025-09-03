@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./provider/providers";  // import your client wrapper
+import TokenSync from "@/tokensync";
 
 export const metadata: Metadata = {
   title: "Sọmpü | Your All-in-One Creator Portfolio Link",
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <TokenSync/>
+          {children}
+          </Providers>
       </body>
     </html>
   );

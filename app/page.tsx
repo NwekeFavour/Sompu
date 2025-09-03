@@ -23,15 +23,15 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6">
               <Zap className="w-4 h-4 mr-2 text-yellow-500 blink-zap" />
-              Celebrating African Creativity
+              Celebrating Bold, Untold Stories
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
               Connect Your
-              <span className="text-primary block">African Story</span>
+              <span className="text-primary block"> Story to the World</span>
             </h1>
             <p className="text-xl text-white opacity-75 mb-8 max-w-2xl mx-auto leading-relaxed">
-              The premier platform for African creators to showcase their work, connect with their audience, and
-              celebrate the rich diversity of African culture and creativity.
+              The premier platform for creators to showcase their work, connect with their audience, and
+              celebrate the rich diversity of culture and creativity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 bg-teal-950">
@@ -50,7 +50,7 @@ export default function HomePage() {
       <section id="creators"  className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Built for African Creators</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Built for storytellers with roots and vision</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Everything you need to showcase your creativity and connect with your community
             </p>
@@ -63,7 +63,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Cultural Showcase</CardTitle>
                 <CardDescription>
-                  Highlight your African heritage with customizable themes and cultural elements
+                  Highlight your heritage with customizable themes and cultural elements
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -74,7 +74,7 @@ export default function HomePage() {
                 </div>
                 <CardTitle>Community First</CardTitle>
                 <CardDescription>
-                  Connect with fellow African creators and build meaningful relationships
+                  Connect with fellow creators and build meaningful relationships
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -95,7 +95,7 @@ export default function HomePage() {
       <section id="features" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Featured African Creators</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Creators of Today, Voices of Tomorrow</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Discover amazing creators from across the continent
             </p>
@@ -152,7 +152,7 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Sompü?</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                {"More than just a link-in-bio tool - we're built specifically for the African creative community"}
+                {"More than just a link-in-bio tool - we're built specifically for the creative community"}
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -162,9 +162,9 @@ export default function HomePage() {
                     <Award className="w-6 h-6 text-amber-500" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">Celebrate African Heritage</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Honoring Roots, Shaping Futures</h3>
                     <p className="text-muted-foreground">
-                      Showcase your work with themes inspired by African art, patterns, and cultural elements that tell
+                      Showcase your work with themes inspired by art, patterns, and cultural elements that tell
                       your story.
                     </p>
                   </div>
@@ -188,7 +188,7 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-xl font-bold text-foreground mb-2">Global Reach, Local Heart</h3>
                     <p className="text-muted-foreground">
-                      Connect with audiences worldwide while staying true to your African roots and cultural identity.
+                      Connect with audiences worldwide while staying true to your roots and cultural identity.
                     </p>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span className="text-muted-foreground">Premium African themes</span>
+                    <span className="text-muted-foreground">Premium Roots-Inspired Themes</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
@@ -362,7 +362,7 @@ export default function HomePage() {
               Ready to Share Your Story with the World?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Join thousands of African creators who are already using Sompü to showcase their work, connect with
+              Join thousands of creators who are already using Sompü to showcase their work, connect with
               their audience, and grow their creative businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -393,10 +393,10 @@ export default function HomePage() {
       <section id="community" className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Join the African Creator Community</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Join the Community Redefining Culture</h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Connect with thousands of creators across Africa. Share your story, discover new talent, and celebrate the
-              diversity of African creativity.
+              diversity of creativity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button size="lg" className="text-lg px-8 bg-emerald-950 hover:bg-emerald-800">

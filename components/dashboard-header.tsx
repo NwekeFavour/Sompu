@@ -11,13 +11,24 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Heart, Settings, User, LogOut, Eye } from "lucide-react"
 import Link from "next/link"
+import { useAppDispatch } from "@/store/hook"
+import { logout } from "@/features/auth/authslice"
+import { persistor } from "@/store"
+import { useState } from "react"
 
 export function DashboardHeader() {
+  const [loading, setLoading] = useState(false);
+  const dispatch = useAppDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+    persistor.purge();
+    localStorage.removeItem("token");
+  };
   return (
     <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-sm">
+          <div className="w-8 h-8 bg-gradient-to-br from-emerald-900 to-emerald-200 from-40% rounded-lg flex items-center justify-center shadow-sm">
             <Heart className="w-5 h-5 text-white" />
           </div>
           <span className="text-xl font-bold text-foreground">Sompü</span>
@@ -55,7 +66,9 @@ export function DashboardHeader() {
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <LogOut className="mr-2 h-4 w-4" />
-                Log out
+                <Button variant="ghost" onClick={handleLogout} className="">
+                  Log out
+                </Button>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

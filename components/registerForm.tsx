@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hook";  
-import { registerUser } from "../features/auth/authslice";
+import { registerUser, resetSuccess } from "../features/auth/authslice";
 import {toast} from 'react-toastify';
 
 import { User } from "../type"
@@ -10,18 +10,21 @@ import { useRouter } from "next/navigation";
 
 export default function RegisterForm() {
   const dispatch = useAppDispatch();
-  const router = useRouter()
-
+  const router = useRouter();
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
-    password: "",
+    password: "",  
   });
-
-  // grab state from authslice
   const { loading, error, user, success } = useAppSelector(
     (state: { auth: { loading: boolean; error: string | null; user: User; success: boolean } }) => state.auth
   );
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    dispatch(resetSuccess());
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,29 +32,25 @@ export default function RegisterForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Register data:", formData);
-    console.log(success, user)
     dispatch(registerUser(formData));
   };
 
   // show error notification
   useEffect(() => {
-    if (error) {
-      console.log("error:",  error)
-      toast.error(error)
+    if (mounted && error) {
+      toast.error(error);
     }
-  }, [error]);
+  }, [error, mounted]);
 
   // show success notification
   useEffect(() => {
-    if (success) {
-      console.log(success, user)
+    if (mounted && success) {
       setTimeout(() => {
-        router.push("/profile-setup")
+        router.push("/dashboard/profile-setup");
       }, 4000);
-      toast.success("Account created successfully 🎉")
+      toast.success("Account created successfully 🎉");
     }
-  }, [success, router, user]);
+  }, [success, router, user, mounted]);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
@@ -67,7 +66,6 @@ export default function RegisterForm() {
           required
         />
       </div>
-
       <div>
         <label className="block text-sm font-medium text-gray-700">Email</label>
         <input
@@ -80,7 +78,6 @@ export default function RegisterForm() {
           required
         />
       </div>
-
       <div>
         <label className="block text-sm font-medium text-gray-700">Password</label>
         <input
@@ -93,13 +90,12 @@ export default function RegisterForm() {
           required
         />
       </div>
-
       {/* render error message inline as well */}
-{error && (
-  <p className="text-red-500 text-sm text-center">
-    {typeof error === "string" ? error : JSON.stringify(error)}
-  </p>
-)}
+      {error && (
+        <p className="text-red-500 text-sm text-center">
+          {typeof error === "string" ? error : JSON.stringify(error)}
+        </p>
+      )}
       <button
         type="submit"
         className="w-full bg-emerald-900 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition"

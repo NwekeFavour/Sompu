@@ -21,11 +21,11 @@ export default function AboutPage() {
               Our Story
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
-              Empowering African
+              Empowering
               <span className="text-black/90 block">Creativity Worldwide</span>
             </h1>
             <p className="text-xl text-white opacity-75 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Sompü was born from a simple belief: African creators deserve a platform that truly understands and
+              Sompü was born from a simple belief: Creators deserve a platform that truly understands and
               celebrates their unique stories, culture, and creative vision.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function AboutPage() {
                 </div>
                 <CardTitle className="text-2xl mb-4">Our Mission</CardTitle>
                 <CardDescription className="text-base leading-relaxed">
-                  To provide African creators with the tools, platform, and community they need to showcase their work,
+                  To provide creators with the tools, platform, and community they need to showcase their work,
                   connect with audiences, and build sustainable creative careers.
                 </CardDescription>
               </CardHeader>
@@ -56,7 +56,7 @@ export default function AboutPage() {
                 </div>
                 <CardTitle className="text-2xl mb-4">Our Vision</CardTitle>
                 <CardDescription className="text-base leading-relaxed">
-                  A world where African creativity is recognized, celebrated, and supported globally, breaking down
+                  A world where creativity is recognized, celebrated, and supported globally, breaking down
                   barriers and creating opportunities for creators across the continent.
                 </CardDescription>
               </CardHeader>
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 <CardTitle className="text-2xl mb-4">Our Values</CardTitle>
                 <CardDescription className="text-base leading-relaxed">
                   Authenticity, community, cultural pride, and innovation guide everything we do. We believe in
-                  celebrating diversity while fostering unity among African creators.
+                  celebrating diversity while fostering unity among creators.
                 </CardDescription>
               </CardHeader>
             </Card>

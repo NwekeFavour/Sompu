@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Plus, BarChart3, Users, Eye, ExternalLink } from "lucide-react"
 import AfricanSmile from "../../../public/images/african-w-smiling.webp"
 import Image from "next/image"
+import ProtectedRoute from "@/components/protectedRoute"
 export default async function DashboardPage() {
 
   const links = [
@@ -46,14 +47,14 @@ export default async function DashboardPage() {
   ]
 
   return (
-    // <ProtectedRoute>
+    <ProtectedRoute>
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8">
           {/* Profile Preview Card */}
           <div className="mb-8">
-            <Card className="bg-gradient-to-br from-[#edfcf1] to-[#fbfff3] border-primary/20">
+            <Card className="bg-gradient-to-br from-green-600/25 !to-background from-30% border-primary/20">
               <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
+                <div className="sm:flex items-center justify-between mb-4">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
                       <Image
@@ -72,7 +73,7 @@ export default async function DashboardPage() {
                       </Badge>
                     </div>
                   </div>
-                  <Button variant="outline" className="gap-2 bg-transparent">
+                  <Button variant="outline" className="gap-2  sm:w-fit w-full flex justify-center sm:mt-0 mt-7 bg-transparent">
                     <ExternalLink className="w-4 h-4" />
                     View Profile
                   </Button>
@@ -135,7 +136,7 @@ export default async function DashboardPage() {
                 <h2 className="text-2xl font-bold text-foreground">Your Links</h2>
                 <p className="text-muted-foreground">Manage and organize your links</p>
               </div>
-              <Button className="bg-gradient-to-l from-orange-500 to-green-500 hover:from-orange-300 hover:to-green-400 font-bold">
+              <Button className="bg-gradient-to-l from-emerald-900 to-teal-500 hover:from-emerald-300 hover:to-teal-400 font-bold">
                 <Plus className="w-4 h-4 mr-2" />
                 Add Link
               </Button>
@@ -169,6 +170,6 @@ export default async function DashboardPage() {
           </div>
         </div>
       </div>
-    // </ProtectedRoute>
+    </ProtectedRoute>
   )
 }
