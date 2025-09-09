@@ -13,8 +13,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
     <div >
       <div>
         <div>
-          <div className="p-4 mb-4 absolute bottom-0 lg:left-0 right-0 sm:right-0 flex justify-between items-center">
-            <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+          <div className="p-4 mb-4 absolute sm:bottom-0 lg:left-0  sm:right-0 flex justify-between items-center">
+            <Link href="/" className="text-emerald-950 underline hover:text-foreground transition-colors">
               Go Home
             </Link>
           </div>

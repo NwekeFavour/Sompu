@@ -48,7 +48,7 @@ export function Header() {
           <Link href="/login" className="hidden lg:inline text-sm font-medium text-shadow-black hover:text-neutral-800 transition-colors">
             Sign In
           </Link>
-          <Link href={"/register"} className="bg-emerald-900 hover:bg-black/70 text-white rounded-md py-2  md:py-3 xl:px-5 lg:px-4 md:px-3 sm:px-3 px-3">Get Started</Link>
+          <Link href={"/register"} className="bg-emerald-900 hover:bg-emerald-800 text-white rounded-md py-2  md:py-2 xl:px-5 lg:px-4 md:px-3 sm:px-3 px-3">Get Started</Link>        
         </div>
       </div>
     </header>
