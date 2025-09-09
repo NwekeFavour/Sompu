@@ -274,7 +274,7 @@ export default function HomePage() {
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl mb-2">Creator Pro</CardTitle>
                   <div className="text-4xl font-bold text-foreground mb-2">
-                    $9<span className="text-lg text-muted-foreground">/mo</span>
+                    ₦1000<span className="text-lg text-muted-foreground">/mo</span>
                   </div>
                   <CardDescription>For serious creators</CardDescription>
                 </CardHeader>
@@ -304,7 +304,7 @@ export default function HomePage() {
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl mb-2">Business</CardTitle>
                   <div className="text-4xl font-bold text-foreground mb-2">
-                    $29<span className="text-lg text-muted-foreground">/mo</span>
+                    ₦2000<span className="text-lg text-muted-foreground">/mo</span>
                   </div>
                   <CardDescription>For growing businesses</CardDescription>
                 </CardHeader>

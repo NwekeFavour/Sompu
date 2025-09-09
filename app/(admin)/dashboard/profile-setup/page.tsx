@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Upload, Heart } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 // Example categories
 const categories = [
@@ -52,7 +53,7 @@ export default function ProfileSetupPage() {
 
   const dispatch = useAppDispatch();
   const { loading, error } = useAppSelector((state) => state.setup);
-
+  const router = useRouter()
   const handleNext = () => currentStep < steps.length && setCurrentStep((s) => s + 1);
   const handlePrev = () => currentStep > 1 && setCurrentStep((s) => s - 1);
 
@@ -75,7 +76,9 @@ export default function ProfileSetupPage() {
       .unwrap()
       .then(() => {
         toast.success("Profile setup completed 🎉");
-      })
+        setTimeout(() => {
+          router.push("/dashboard");
+        }, 4000);      })
       .catch((err) => {
         toast.error(typeof err === "string" ? err : err.message || "Something went wrong");
       });

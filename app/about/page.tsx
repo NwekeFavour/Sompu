@@ -4,13 +4,40 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Badge } from "@/components/ui/badge"
 import { Heart, Users, Globe, Target, Award, Lightbulb } from "lucide-react"
 import { FAQComponent } from "@/components/faqAccordion"
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer"
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-        <Header/>
+        {/* <Header/> */}
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 border rounded-xl border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="w-9 h-9 bg-emerald-900 rounded-lg flex items-center justify-center">
+              <Heart className="w-5 h-5 text-primary-foreground" />
+            </div>
+            <span className="text-xl font-bold text-foreground">AfriLink</span>
+          </Link>
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+              Home
+            </Link>
+            <Link href="/about" className="text-foreground font-medium">
+              About
+            </Link>
+            <Link href="/faq" className="text-muted-foreground hover:text-foreground transition-colors">
+              FAQ
+            </Link>
+          </nav>
+          <div className="flex items-center space-x-3">
+            <Button variant="ghost" size="sm">
+              Sign In
+            </Button>
+            <Button size="sm">Get Started</Button>
+          </div>
+        </div>
+      </header>
       {/* Hero Section */}
       <section className="relative bg-teal-900/65 py-38 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tl from-teal-950/5 via-background from-90% to-teal-200/5"></div>

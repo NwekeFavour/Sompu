@@ -91,7 +91,7 @@ export default function PricingPage() {
                 <CardTitle className="text-2xl">Creator Pro</CardTitle>
                 <CardDescription>For serious creators building their brand</CardDescription>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-foreground">$9</span>
+                  <span className="text-4xl font-bold text-foreground">₦1000</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
               </CardHeader>
@@ -128,7 +128,7 @@ export default function PricingPage() {
                 <CardTitle className="text-2xl">Business</CardTitle>
                 <CardDescription>For established creators and agencies</CardDescription>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold text-foreground">$29</span>
+                  <span className="text-4xl font-bold text-foreground">₦2000</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
               </CardHeader>

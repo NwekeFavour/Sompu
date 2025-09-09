@@ -65,3 +65,6 @@ export function LinkCard({ title, url, clicks, isActive, icon }: LinkCardProps) 
     </Card>
   )
 }
+
+
+export default LinkCardProps
