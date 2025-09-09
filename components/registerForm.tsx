@@ -24,7 +24,7 @@ export default function RegisterForm() {
   useEffect(() => {
     setMounted(true);
     dispatch(resetSuccess());
-  }, []);
+  }, [dispatch]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

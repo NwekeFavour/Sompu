@@ -52,7 +52,7 @@ export default function ProfileSetupPage() {
   });
 
   const dispatch = useAppDispatch();
-  const { loading, error } = useAppSelector((state) => state.setup);
+  const { loading } = useAppSelector((state) => state.setup);
   const router = useRouter()
   const handleNext = () => currentStep < steps.length && setCurrentStep((s) => s + 1);
   const handlePrev = () => currentStep > 1 && setCurrentStep((s) => s - 1);

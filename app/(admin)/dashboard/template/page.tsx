@@ -125,8 +125,7 @@ export default function TemplatesPage() {
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">More Templates Coming Soon</h2>
           <p className="text-gray-600 mb-6">
-            We're working on more authentic African-inspired templates including Royal Elegance, Nature's Child, and
-            Diaspora Connect themes.
+            {"We're working on more authentic African-inspired templates including Royal Elegance, Nature's Child, and Diaspora Connect themes."}
           </p>
           <Button variant="outline">Request Custom Template</Button>
         </div>

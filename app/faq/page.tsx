@@ -1,7 +1,6 @@
 "use client"
 import { FAQComponent } from "@/components/faqAccordion"
 import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
 import { Heart } from "lucide-react"
 import Link from "next/link"

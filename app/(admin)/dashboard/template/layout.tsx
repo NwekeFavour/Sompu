@@ -1,7 +1,6 @@
 "use client"
 // app/dashboard/layout.tsx
 import { ReactNode, useEffect } from "react"
-import { DashboardHeader } from "@/components/dashboard-header"
 import { useAppSelector } from "@/store/hook";
 import { useRouter } from "next/navigation";
 

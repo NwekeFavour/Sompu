@@ -22,6 +22,11 @@ export function DashboardHeader() {
   const dispatch = useAppDispatch();
   const profile = useAppSelector((state) => state.setup.data);
 
+  if(profile){
+    setLoading(false);
+  } else {
+    setLoading(true);
+  } 
   const handleLogout = () => {
     dispatch(logout());
     persistor.purge();
@@ -57,7 +62,7 @@ export function DashboardHeader() {
                 <p className="text-sm font-medium leading-none">{profile?.displayName || "No Name"}</p>
                 <p className="text-xs leading-none text-muted-foreground">
                   { loading ? 
-                  <Skeleton className="h-32 w-full mb-8" />
+                    <Skeleton className="h-32 w-full mb-8" />
                     : 
                       (profile?.username ? `@${profile.username}` : "No username")
                   }
