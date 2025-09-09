@@ -17,7 +17,7 @@ export default function AboutPage() {
             <div className="w-9 h-9 bg-emerald-900 rounded-lg flex items-center justify-center">
               <Heart className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">Sompü</span>
+            <span className="text-xl text-foreground">Sompü</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
