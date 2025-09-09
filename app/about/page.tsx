@@ -31,10 +31,10 @@ export default function AboutPage() {
             </Link>
           </nav>
           <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="sm">
+            <Button className="sm:flex hidden" variant="ghost" size="sm">
               Sign In
             </Button>
-            <Button size="sm">Get Started</Button>
+            <Button className="bg-emerald-900 hover:bg-black/70 text-white rounded-md py-2  md:py-3 xl:px-5 lg:px-4 md:px-3 sm:px-3 px-3" size="sm">Get Started</Button>
           </div>
         </div>
       </header>

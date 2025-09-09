@@ -74,7 +74,7 @@ export default function FAQPage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div>
- <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 border rounded-xl border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md">
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 border rounded-xl border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-md">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-9 h-9 bg-emerald-900 rounded-lg flex items-center justify-center">
@@ -94,10 +94,10 @@ export default function FAQPage() {
             </Link>
           </nav>
           <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="sm">
+            <Button className="sm:flex hidden" variant="ghost" size="sm">
               Sign In
             </Button>
-            <Button size="sm">Get Started</Button>
+            <Button className="bg-emerald-900 hover:bg-black/70 text-white rounded-md py-2  md:py-3 xl:px-5 lg:px-4 md:px-3 sm:px-3 px-3" size="sm">Get Started</Button>
           </div>
         </div>
       </header>
